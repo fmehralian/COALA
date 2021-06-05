@@ -31,4 +31,4 @@ celerybeat-schedule
 
 DataAnalysis/out
 DataAnalysis/aux
-#DeepLearning/out
+DeepLearning/out
