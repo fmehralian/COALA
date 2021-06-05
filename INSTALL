@@ -12,5 +12,5 @@ Install nlg-eval from [here](https://github.com/Maluuba/nlg-eval).
 
 
 ### nltk
-Run `python -c "import nltk; nltk.download('wordnet')"`
+Run `python3 -c "import nltk; nltk.download('wordnet'); nltk.download('punkt')"`
 
