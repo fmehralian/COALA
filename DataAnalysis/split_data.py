@@ -105,7 +105,7 @@ def new_dist(_args):
         else:
             selected_items[icon['pkg_name']] = [icon]
 
-    root = "data"
+    root = "out"
 
     write_to_files(root, "train", train_apps, selected_items, _args.split_version)
     write_to_files(root, "test", test_apps, selected_items, _args.split_version)
@@ -135,7 +135,7 @@ def main(_args):
                 freq[icon['content']] = 1
 
     freq = dict(sorted(freq.items(), key=lambda item: item[1], reverse=True))
-    with open('data/freq_v{}.csv'.format(_args.split_version), "w") as csvfile:
+    with open('out/freq_v{}.csv'.format(_args.split_version), "w") as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(['content description', 'count'])
         for key in freq:
@@ -162,25 +162,25 @@ def main(_args):
 
 
 def load_icons(_args):
-    with open("data/coala_data_v{}_s{}.json".format(_args.filter_version, 0), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.data_path, _args.filter_version, 0), "r") as f:
         icons_0 = json.load(f)
         for icon in icons_0:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version, 0),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version, 0),
                                               icon['img_path'])
-    with open("data/coala_data_v{}_s{}.json".format(_args.filter_version, 1), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.data_path, _args.filter_version, 1), "r") as f:
         icons_1 = json.load(f)
         for icon in icons_1:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version, 1),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version, 1),
                                               icon['img_path'])
-    with open("data/coala_data_v{}_s{}.json".format(_args.filter_version, 2), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.data_path, _args.filter_version, 2), "r") as f:
         icons_2 = json.load(f)
         for icon in icons_2:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version, 2),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version, 2),
                                               icon['img_path'])
-    with open("data/coala_data_v{}_s{}.json".format(_args.filter_version, 3), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.data_path, _args.filter_version, 3), "r") as f:
         icons_3 = json.load(f)
         for icon in icons_3:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version, 3),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version, 3),
                                               icon['img_path'])
     icons = icons_0 + icons_1 + icons_2 + icons_3
     return icons

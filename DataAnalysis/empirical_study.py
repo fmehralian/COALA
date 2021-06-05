@@ -34,6 +34,7 @@ def study_images(_args):
             print('{}/{}'.format(counter, len(icons)))
         counter += 1
         path = os.path.join(_args.image_path, icon['img_path'])
+        print(path)
         img_class = image_concept(path)
         store_classes[path] = img_class
         if img_class in contents:
@@ -45,7 +46,7 @@ def study_images(_args):
                 tokens[img_class].add(token)
             else:
                 tokens[img_class] = set([token])
-    with open("data/emp_image_classes_v{}.json".format(_args.filter_version), "w") as f:
+    with open("{}/emp_image_classes_v{}.json".format(_args.image_path, _args.filter_version), "w") as f:
         json.dump(store_classes, f)
 
     for img_class in contents:
@@ -103,14 +104,14 @@ def study_label_distribution(_args):
     print("tot:{} / {} found all their tokens and {} found at least one".format(uniques, whole_match, partially_match))
 
     content_freq = dict(sorted(content_freq.items(), key=lambda item: item[1], reverse=True))
-    with open('data/emp_content_freq_v{}.csv'.format(_args.filter_version), "w") as csvfile:
+    with open('{}/emp_content_freq_v{}.csv'.format(_args.image_path, _args.filter_version), "w") as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(['content description', 'count'])
         for key in content_freq:
             csvwriter.writerow([key, content_freq[key]])
 
     token_freq = dict(sorted(token_freq.items(), key=lambda item: item[1], reverse=True))
-    with open('data/emp_token_freq_v{}.csv'.format(_args.filter_version), "w") as csvfile:
+    with open('{}/emp_token_freq_v{}.csv'.format(_args.image_path, _args.filter_version), "w") as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(['content description', 'count'])
         for key in token_freq:
@@ -118,25 +119,25 @@ def study_label_distribution(_args):
 
 
 def load_data(_args):
-    with open("data/coala_data_v_{}_s{}.json".format(_args.filter_version, 0), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.image_path, _args.filter_version, 0), "r") as f:
         icons_0 = json.load(f)
         for icon in icons_0:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version, 0),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version, 0),
                                               icon['img_path'])
-    with open("data/coala_data_v_{}_s{}.json".format(_args.filter_version , 1), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.image_path, _args.filter_version , 1), "r") as f:
         icons_1 = json.load(f)
         for icon in icons_1:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version , 1),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version , 1),
                                               icon['img_path'])
-    with open("data/coala_data_v_{}_s{}.json".format(_args.filter_version, 2), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.image_path, _args.filter_version, 2), "r") as f:
         icons_2 = json.load(f)
         for icon in icons_2:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version, 2),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version, 2),
                                               icon['img_path'])
-    with open("data/coala_data_v_{}_s{}.json".format(_args.filter_version , 3), "r") as f:
+    with open("{}/coala_data_v{}_s{}.json".format(_args.image_path, _args.filter_version , 3), "r") as f:
         icons_3 = json.load(f)
         for icon in icons_3:
-            icon['img_path'] = "{}/{}".format("labelDroid_image_v{}_s{}".format(_args.filter_version , 3),
+            icon['img_path'] = "{}/{}".format("image_v{}_s{}".format(_args.filter_version , 3),
                                               icon['img_path'])
     icons = icons_0 + icons_1 + icons_2 + icons_3
     selected_items = {}

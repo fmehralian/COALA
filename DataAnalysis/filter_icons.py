@@ -121,7 +121,7 @@ def analyze(_args):
     if _args.unlabeled:
         with open('out/unlabeled_icons_v{}_s{}.pkl'.format(_args.filter_version, _args.step), 'wb') as f:
             pickle.dump(unlabeled, f)
-    print('dumped {} at {}'.format(len(unlabeled),strftime("%Y-%m-%d %H:%M:%S", gmtime())), statistics)
+    print('dumped {} at {}'.format(image_id_counter, strftime("%Y-%m-%d %H:%M:%S", gmtime())), statistics)
 
 
 # load the icons, make required directories and initialize the variables
