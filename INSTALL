@@ -1,0 +1,16 @@
+## Setup
+- Make sure you have anaconda3 (conda --version)
+- Make sure you have gcc (which gcc)
+- create the environment (`conda create --name coala python=3.7.6 anaconda3`) and activate it (`conda activate coala`)
+- Install the following packages: `conda install pytorch torchvision cudatoolkit=10.2 -c pytorch`, `pip install torchtext==0.6.0 overrides`
+- pip3 install -r REQUIREMENTS
+
+### nlg-eval
+Install nlg-eval from [here](https://github.com/Maluuba/nlg-eval).
+
+(Consider adding their installation location to the PATH if it is not there already `export PATH="/home/<username>/.local/bin:$PATH`)
+
+
+### nltk
+Run `python -c "import nltk; nltk.download('wordnet')"`
+

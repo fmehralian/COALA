@@ -1,0 +1,31 @@
+ COALA uses the raw dataset of XML layouts available online, to study the icon images in `DataAnalysis` and train a new model in `DeepLearning` module.
+ whole dataset: https://www.dropbox.com/sh/kfkhevxykzwputb/AAAhL6ipmOg4zZn4jUL_myF0a?dl=0
+
+ The dataset requires around 256GB space and roughly 6h to be downloaded and expanded depending on your internet speed.
+
+ Analysing this massive data and training a new model using this data takes hours.
+ In particular, parsing the xml files in `icon_extractor.py` take 12 h 25 m on average for each step out of 4. All the steps can be parsed in parallel depending on the memory of your machine. And, the training phase takes roughly 4 h.
+
+ To make the evaluation feasible in less than an hour and with less than 1 GB MB required storage, we prepared a sample dataset.
+
+#Data download:
+
+download the sample xml layouts and unzip in DataAnalysis/aux/data_sample.
+https://drive.google.com/file/d/13jrdZoJPLZivTsl_hOd9vgHV7Jvt04Ol/view?usp=sharing
+
+download the sample model and data for DeepLearning module and unzip in DeepLearning/out.
+https://drive.google.com/file/d/1Va2YKgK_7K1KQ9hXAgG6vnKs35Vc-mcQ/view?usp=sharing
+
+
+#Hardware requirements:
+
+Our code is tested on an Ubuntu computing cluster with NVIDIA GP102 GPU and 128G memory.
+
+#Software requirements:
+
+gcc
+anaconda
+python3
+and python libraries as mentioned in requirements.txt
+
+- Follow the SETUP steps to set the environment properly.

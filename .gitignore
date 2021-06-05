@@ -1,0 +1,34 @@
+.idea
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+data_files/*
+data/*
+combined/
+nohup.out
+results.csv
+__pycache__
+.DS_Store
+semantic_annotations/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+DataAnalysis/out
+DataAnalysis/aux
+#DeepLearning/out
