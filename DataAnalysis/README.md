@@ -7,6 +7,7 @@ Three main functionalities of this module are:
 4. Split data for training 
 
 ====
+For the raw data, you can either download the whole raw dataset of [LabelDroid](https://www.dropbox.com/sh/kfkhevxykzwputb/AAAhL6ipmOg4zZn4jUL_myF0a?dl=0), or the small [sample set](https://drive.google.com/file/d/13jrdZoJPLZivTsl_hOd9vgHV7Jvt04Ol/view?usp=sharing) of that which was created to evaluate the functionality of the source code.
 
 1. To extracts icons from a raw dataset of xml layouts:
 `python3 icon_extractor.py --data-path="<root directory of LabelDroid dataset>" --step=<0:3> --version=1`
