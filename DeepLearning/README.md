@@ -1,10 +1,8 @@
 # Deep Learning Model 
 
 To test a pretrained model on a sample data:
-1. Download the test set and images (a sample is available in `out` dir)  
-2. Download the model (a sample is available in `out/models` dir)
-3. Download the vocab (a sample is available in `out/vocab_v1` dir)
-4. Run the following command
+- Extract the content of sample model and data vocab in `out` directory [drive](https://drive.google.com/file/d/1Va2YKgK_7K1KQ9hXAgG6vnKs35Vc-mcQ/view?usp=sharing)
+- Run the following command
 
 `python3 start.py --test --image-path="out" --model-path=out/models/sample_trained --test-content-path="out/sample.json" --no-attention --log`
 
