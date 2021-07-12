@@ -6,6 +6,7 @@ Three main functionalities of this module are:
 3. Empirical study
 4. Split data for training 
 
+====
 
 1. To extracts icons from a raw dataset of xml layouts:
 `python3 icon_extractor.py --data-path="<root directory of LabelDroid dataset>" --step=<0:3> --version=1`
