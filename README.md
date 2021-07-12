@@ -1,6 +1,8 @@
 # COALA
 Data-driven Accessibility Repair Revisited: On the Effectiveness of Generating Labels for Icons in Android Apps
 
+[![DOI](https://zenodo.org/badge/374075484.svg)](https://zenodo.org/badge/latestdoi/374075484)
+
 The artifacts of COALA consist of the source code in two modules, `DataAnalysis` and `DeepLearning`, and several additional results and materials as mentioned in the paper in `Additional results`.
 
 ## Getting Started
